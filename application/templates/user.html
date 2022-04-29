@@ -1,0 +1,39 @@
+{% extends "layout.html" %} {% block content %}
+<div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">User ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.user_id }}</td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.r1["role"] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<!-- <div class="row">
+        <div class="col-md-12 text-center">
+            {% for user in users %}
+          <dl>
+              <dt>User ID: {{ user.user_id }}</dt>
+              <dd>Email: {{ user.email }}</dd>
+              <dd>Password: {{ user.password }}</dd>
+          </dl>
+          {% else %}
+          <h3>No record found</h3>
+          {% endfor %}
+        </div>
+    </div> -->
+{% endblock %}
